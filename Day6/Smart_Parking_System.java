@@ -1,0 +1,38 @@
+package JavaIgniteDay6;
+
+public class Smart_Parking_System {
+	int vehicleNum;
+	int hoursParked;
+	String vehicleType;
+	double parkingFee;
+	
+	Smart_Parking_System (int num,int hours,String type)
+	{
+		vehicleNum = num;
+		hoursParked = hours;
+		vehicleType = type;
+		
+		switch(vehicleType)
+		{
+		case "Bike":
+			parkingFee = 10*hoursParked;
+			break;
+		case "Car":
+			parkingFee = 30*hoursParked;
+			break;
+		case "Bus":
+			parkingFee = 50*hoursParked;
+			break;
+		}
+		
+	}
+	void display()
+	{
+		System.out.println("Final fee: Rs."+parkingFee);
+	}
+	public static void main(String[] args) {
+		Smart_Parking_System vehicle = new Smart_Parking_System(245,5,"Bike");
+		vehicle.display();
+	}
+
+}
